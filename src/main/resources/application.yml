@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/qf
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    output:
+      ansi:
+        enabled: ALWAYS
+logging:
+  level:
+    root: INFO
+    com.qf.user: DEBUG
+    org.springframework.web: INFO
+    org.springframework.data.r2dbc.core: DEBUG
+    org.springframework.jdbc.datasource.init.ScriptUtils: DEBUG
+    org.hibernate: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+  pattern:
+    level: "%clr(%5p) %clr([%t])"
+
+
+server:
+  port: 8585
